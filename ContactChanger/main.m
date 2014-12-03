@@ -41,7 +41,7 @@
 @implementation ABView
 
 + (NSArray *)colors {
-    NSArray *colors = @[[NSColor iOS7orangeColor], [NSColor iOS7yellowColor], [NSColor iOS7greenColor], [NSColor iOS7lightBlueColor], [NSColor iOS7darkBlueColor], [NSColor iOS7purpleColor], [NSColor iOS7pinkColor]];
+    NSArray *colors = @[[NSColor colorWithRed:226/255.0 green:106/255.0 blue:106/255.0 alpha:1], [NSColor colorWithRed:89/255.0 green:171/255.0 blue:227/255.0 alpha:1], [NSColor colorWithRed:27/255.0 green:188/255.0 blue:155/255.0 alpha:1], [NSColor colorWithRed:235/255.0 green:151/255.0 blue:78/255.0 alpha:1], [NSColor colorWithRed:155/255.0 green:89/255.0 blue:182/255.0 alpha:1], [NSColor colorWithRed:51/255.0 green:110/255.0 blue:123/255.0 alpha:1]];
     return colors;
 }
 
@@ -63,6 +63,7 @@
     self.initialsLabel.bezeled         = NO;
     self.initialsLabel.editable        = NO;
     self.initialsLabel.drawsBackground = NO;
+    self.initialsLabel.alphaValue = 0.6;
     
     self.initialsLabel.alignment = NSCenterTextAlignment;
     
@@ -122,8 +123,6 @@ int main(int argc, const char * argv[]) {
                 JPLog(@"%@, %@", [person valueForKey:kABFirstNameProperty], [person valueForKey:kABLastNameProperty]);
             }
         }
-        
-        
 
         for (ABPerson *person in people) {
             NSString *firstI = [[[person valueForKey:kABFirstNameProperty] substringToIndex:1] uppercaseString];
